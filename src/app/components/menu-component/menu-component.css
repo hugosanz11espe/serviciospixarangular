@@ -1,0 +1,90 @@
+.custom-navbar {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 0.8rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
+}
+
+.custom-navbar .nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin: 0 0.3rem;
+  transition: color 0.3s;
+}
+
+.custom-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: #4ade80;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #fff;
+}
+
+.custom-navbar .nav-link:hover::after,
+.custom-navbar .nav-link.active::after {
+  width: 70%;
+}
+
+.search-form .form-control {
+  border: none;
+  border-radius: 50px 0 0 50px;
+  padding-left: 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.search-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+  color: #fff;
+}
+
+.btn-accent {
+  background: #4ade80;
+  color: #0f2a1a;
+  font-weight: 600;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  padding: 0 1.2rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-accent:hover {
+  background: #22c55e;
+  transform: translateX(2px);
+}
+
+@media (max-width: 991px) {
+  .search-form {
+    margin-top: 0.8rem;
+  }
+}

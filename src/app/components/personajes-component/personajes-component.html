@@ -1,0 +1,28 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">Personajes</h1>
+
+  <div class="row g-4" *ngIf="arraypersonajes.length > 0; else cargando">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let personaje of arraypersonajes">
+      <div class="card h-100 shadow-sm personaje-card">
+        <img [src]="personaje.imagen" class="card-img-top personaje-img" [alt]="personaje.nombre"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ personaje.nombre }}</h5>
+          <span class="badge bg-primary">{{ personaje.pelicula }}</span>
+        </div>
+       <div class="card-footer text-center">
+  <small class="text-muted d-block mb-2">ID: {{ personaje.idPersonaje }}</small>
+  <button class="btn btn-outline-danger btn-sm w-100" (click)="eliminarPersonaje(personaje.idPersonaje)">
+    Eliminar
+  </button>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #cargando>
+    <div class="text-center my-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="mt-2">Cargando personajes...</p>
+    </div>
+  </ng-template>
+</div>

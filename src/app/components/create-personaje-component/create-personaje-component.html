@@ -1,0 +1,39 @@
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div class="card shadow form-card">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">Nuevo personaje</h2>
+
+          <div class="mb-3">
+            <label class="form-label">ID</label>
+            <input type="number" class="form-control" #cajaid placeholder="Ej: 1"/>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" #cajanombre placeholder="Nombre del personaje"/>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Imagen (URL)</label>
+            <input type="text" class="form-control" #cajaimagen placeholder="https://..."/>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Película</label>
+            <input type="text" class="form-control" #cajapelicula placeholder="Película a la que pertenece"/>
+          </div>
+
+          <button class="btn btn-primary w-100" (click)="insertarPersonaje()">
+            Insertar personaje
+          </button>
+
+          <div class="alert alert-success text-center mt-4 mb-0" role="alert" *ngIf="mensaje">
+            {{ mensaje }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
